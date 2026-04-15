@@ -1,2 +1,2 @@
 # WAV
-我不知道该说什么
+a wav demo use C language.
