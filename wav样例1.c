@@ -1,3 +1,7 @@
+/*
+这是一个用 C 语言生成 16 位单声道 WAV 音频文件（440Hz 正弦波）的完整程序，逻辑基本正确，能直接运行生成可播放的 test.wav
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
@@ -55,7 +59,7 @@ int main(void)
     write_le_32(f,16);//fmt区块本身的大小
     write_le_16(f,1);//编码格式PCM
     write_le_16(f,1);//通道数
-    write_le_32(f, FREQ);//采样率（一般是44100Hz
+    write_le_32(f, FREQ);//采样率（一般是44100Hz）
     write_le_32(f, FREQ * sizeof(u16));//采样率*声道*位深/8
     write_le_16(f, sizeof(u16));//声道*位深/8
     write_le_16(f, sizeof(u16) * 8);//每一位采样的比特率（16位）
